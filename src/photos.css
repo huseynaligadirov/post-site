@@ -1,0 +1,23 @@
+.product .photos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 170px;
+  position: relative;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+.photos div {
+    position: relative;
+}
+.photos > div:hover::after {
+    content: "";
+    height: 4px;
+    width: 100%;
+    background-color: #00aaff ;
+    position: absolute;
+    bottom: 5px;
+    border-radius: 10px;
+
+
+}
