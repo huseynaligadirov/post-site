@@ -2,13 +2,33 @@
   display: none;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .mobile-menu {
     display: none !important;
+  }
+
+  .edit-post input,
+  .edit-post select {
+    font-size: 0.7rem !important;
   }
 }
 
 @media only screen and (max-width: 400px) {
+  .login form .number input {
+    width: 150px !important;
+  }
+  .login form .number div {
+    gap: 10px !important;
+  }
+  .login form .number div span {
+    font-size: 16px !important;
+  }
+  .login form .number div select {
+    padding: 3px 0 !important;
+  }
+  .login form {
+    width: 90% !important;
+  }
   .mobile-row2 {
     width: 100%;
     background-color: #fff;
@@ -69,9 +89,6 @@
 @media only screen and (max-width: 1024px) {
   section {
     margin: 30px 0;
-  }
-  body {
-    padding-top: 100px !important;
   }
   header .row1 {
     display: none;
@@ -137,6 +154,23 @@
   .login form {
     width: 70% !important;
   }
+  .login form .number {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: center !important;
+  }
+  .login form .number h3 {
+    font-size: 20px;
+  }
+  .login form .number input {
+    width: 300px;
+  }
+  .login form .number div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
   .payment-packs {
     display: grid;
     grid-template-columns: 1fr !important;
@@ -198,7 +232,16 @@
     gap: 20px;
   }
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 830px) {
+  .edit-post form .main {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .login form .otp-form input {
+    width: 100px !important;
+  }
+  .login form .number input {
+    width: 200px;
+  }
   .expanded-search-wraper form {
     width: 80% !important;
   }
@@ -208,7 +251,18 @@
   }
   .expanded-search-wraper form .row select {
     width: 100% !important;
-    
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .edit-post input,
+  .edit-post select {
+    font-size: 0.6rem !important;
+    padding: 1px !important;
+  }
+
+  .edit-post form {
+    max-width: unset !important;
   }
 }
 
@@ -242,4 +296,87 @@
 .mobile-category ul li {
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    padding-top: 100px !important;
+  }
+  #desktop-nav {
+    display: none !important;
+  }
+  #mobile-nav .row-top {
+    display: flex !important;
+  }
+  .row-btm {
+    display: block !important;
+  }
+}
+
+#mobile-nav .row-top {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px !important;
+  z-index: 9999999;
+}
+
+#login-btn {
+  background-color: transparent !important ;
+  padding: 0 !important;
+  font-size: 18px;
+  color: #000 !important;
+}
+
+#mobile-nav i {
+  font-size: 18px;
+}
+#mobile-nav h1 {
+  color: #000;
+}
+
+.row-top {
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
+  left: 0;
+}
+
+.row-btm {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 9999999999;
+}
+.row-btm ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.row-btm i {
+  color: #000;
+}
+
+.row-btm li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit-post form {
+  position: relative;
+}
+
+.edit-post form i {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 16px;
 }

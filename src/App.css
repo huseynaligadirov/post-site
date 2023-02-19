@@ -7,9 +7,7 @@
   text-decoration: none;
   font-family: Source Sans pro;
 }
-body {
-  padding-top: 120px;
-}
+
 section {
   margin: 50px 0;
 }
@@ -20,24 +18,38 @@ section {
 img {
   width: 100%;
 }
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  z-index: 90;
+
+nav .top .container {
+  display: flex;
+  justify-content: space-between;
 }
-header .row1 {
-  background-color: black;
+
+.bottom .container {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 8fr;
+  gap: 20px;
 }
-header a {
-  color: #fff;
+.bottom .search {
+  display: grid;
+  grid-template-columns: 7fr 1fr 1fr;
+  gap: 20px;
 }
-header li {
-  user-select: none;
-  cursor: pointer;
+.bottom input {
   padding: 5px 10px;
+}
+.top {
+  padding: 10px 0;
+  background-color: #000;
+}
+.top ul {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.top a {
+  color: #fff;
 }
 
 .heading {
@@ -99,7 +111,7 @@ header .row2 .container .search-categories .search-bar {
 }
 .search-bar button {
   border: 1px solid transparent !important;
-  transition: .4s;
+  transition: 0.4s;
 }
 .search-bar button:hover {
   background-color: #fff !important;
@@ -158,11 +170,17 @@ header .row2 .container .search-categories .search-bar select {
 .post-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 2%;
+  gap: 20px;
 }
 .product {
   outline: 1px solid rgb(186, 186, 186);
   color: #000;
+  height: 300px !important;
+}
+
+.product img {
+  height: 140px !important;
+  object-fit: cover;
 }
 .product .texts {
   padding: 10px;
@@ -253,7 +271,7 @@ ul li span {
 .login {
   width: 100%;
   height: 110vh;
-  position: absolute;
+  position: fixed;
   top: -50px;
   left: 0;
   display: flex;
@@ -277,6 +295,23 @@ ul li span {
   border-radius: 30px;
 }
 
+.login form .number {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+.close-btn i {
+  color: #000;
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.login span {
+  font-size: 20px;
+  font-weight: 600;
+}
 .prefix {
   display: flex;
   gap: 10px;
@@ -325,19 +360,7 @@ ul li span {
   background-color: #f5f5f9;
   border: 1px solid #959494;
 }
-.login .close-btn {
-  position: absolute;
-  top: 50px;
-  right: 20px;
-  padding: 5px 10px;
-  border-radius: 55%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-}
+
 .category-gallery {
   margin: 20px auto;
 }
@@ -430,7 +453,6 @@ ul li span {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0 20px;
 }
 .expanded-post form {
   display: grid;
@@ -584,7 +606,7 @@ button {
   align-items: center;
   flex-direction: column;
   background-color: #fff;
-  z-index: 99;
+  z-index: 9999999999999999;
   padding-left: 10px;
   gap: 30px;
 }
@@ -786,6 +808,11 @@ header label {
   font-size: 14px !important;
   font-weight: 600;
 }
+.number div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 .container-top-row i {
   font-size: 20px;
 }
@@ -910,10 +937,162 @@ header .mobile-row1 button {
   padding: 5px 10px !important ;
   background-color: #00aaff !important ;
   border: 1px solid transparent !important ;
-  transition: .4s;
+  transition: 0.4s;
 }
 #submit-btn:hover {
   background-color: #fff !important ;
   color: #00aaff !important ;
   border: 1px solid #00aaff !important ;
+}
+
+#login-btn {
+  padding: 7px 20px !important;
+}
+
+.succes {
+  position: fixed;
+  z-index: 9999999999999999;
+  top: 0;
+  left: 0;
+}
+
+.posts-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.post {
+  border: 1px solid rgb(85, 85, 85) !important;
+}
+
+.account-wrapper h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.post a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: #000;
+}
+
+#upfile {
+  display: none;
+}
+#label-up {
+  padding: 5px 10px;
+  background-color: #00aaff;
+  color: #fff;
+}
+
+.row-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.gallery {
+  border: 1px solid #00aaff;
+  padding: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+}
+@media screen and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+}
+.img-div {
+  position: relative;
+}
+#del {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(50%) translateY(-50%);
+}
+.gallery img {
+  height: 150px;
+  object-fit: cover;
+}
+
+.btns-for-user {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: column;
+  gap: 20px;
+  margin: 30px 0;
+}
+.btns-for-user button {
+  width: 100%;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edit-post {
+  width: 100%;
+  height: 100vh;
+  z-index: 99999999999;
+  position: fixed;
+  top: -50px;
+  backdrop-filter: blur(5px) saturate(100%) brightness(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-post form {
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid #6f6f6f;
+  max-width: 70%;
+}
+
+.edit-post form .main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edit-post .row {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.edit-post input,
+.edit-post select {
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid #707070;
+}
+.edit-post textarea {
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid #707070;
+  max-width: 100%;
+  min-width: 50%;
+  max-height: 250px;
+  min-height: 150px;
+}
+
+
+.edit-post label {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

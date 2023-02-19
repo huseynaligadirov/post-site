@@ -26,7 +26,6 @@ console.log(links);
           }}
         />
       </label>
-      <button>Göndər</button>
       </form>
 
       {images.length ? (
